@@ -82,12 +82,12 @@ def diagnose_pipeline(log_text: str, pipeline_type: str) -> str:
 
 # 5. Run a sample diagnosis
 if __name__ == "__main__":
-    # sample_log = """
-    # ERROR Executor: Exception in task 3.0 in stage 12.0
-    # org.apache.spark.sql.AnalysisException:
-    # Path does not exist: /data/sales/
-    # """
-    sample_log ='''MY NAME IS KRATIKA. TELL ME HOW ARE YOU'''
+    sample_log = """
+    ERROR Executor: Exception in task 3.0 in stage 12.0
+    org.apache.spark.sql.AnalysisException:
+    Path does not exist: /data/sales/
+    """
+    
 
     diagnosis = diagnose_pipeline(
         log_text=sample_log,

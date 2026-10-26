@@ -1,0 +1,24 @@
+{
+  "pipeline": "Spark",
+  "error_type": "AnalysisException: missing input path",
+  "severity": "MEDIUM",
+  "summary": "A Spark task failed because the referenced path `/data/sales/` does not exist. The log does not establish the broader job or business impact.",
+  "probable_causes": [
+    "The configured input path may be incorrect or misspelled.",
+    "The expected data may not have been created or made available before the Spark job ran.",
+    "The storage mount or filesystem location containing the path may be unavailable."
+  ],
+  "evidence": [
+    "ERROR Executor: Exception in task 3.0 in stage 12.0",
+    "org.apache.spark.sql.AnalysisException:",
+    "Path does not exist: /data/sales/"
+  ],
+  "recommended_actions": [
+    "Verify that `/data/sales/` is the intended input path in the job configuration.",
+    "Check whether the path exists and is accessible from the Spark execution environment.",
+    "Review upstream job status and data-arrival timing for the expected input.",
+    "Inspect related driver and executor logs for additional context about the failed stage."
+  ],
+  "confidence": 0.97,
+  "needs_more_information": true
+}
