@@ -1,0 +1,30 @@
+{
+  "pipeline": "Spark",
+  "error_type": "AnalysisException — missing input path",
+  "severity": "MEDIUM",
+  "summary": "A Spark task failed because the path `/data/sales/` could not be found. The log does not establish the cause of the missing path or the broader business impact.",
+  "probable_causes": [
+    "The configured input path is incorrect.",
+    "Expected files have not arrived yet.",
+    "The source directory was moved or deleted.",
+    "The storage location or filesystem is unavailable or inaccessible; the log alone does not establish an authorization failure."
+  ],
+  "evidence": [
+    "ERROR Executor: Exception in task 3.0 in stage 12.0",
+    "org.apache.spark.sql.AnalysisException:",
+    "Path does not exist: /data/sales/"
+  ],
+  "recommended_actions": [
+    "Inspect the job configuration and confirm that `/data/sales/` is the intended input path.",
+    "Verify that the directory and expected files exist using the relevant filesystem or storage checks.",
+    "Check whether the upstream process that produces the input completed successfully.",
+    "Confirm that the job is using the intended environment and storage configuration.",
+    "If the path exists, investigate storage connectivity and access permissions separately."
+  ],
+  "confidence": 0.96,
+  "needs_more_information": true,
+  "documentation_sources": [
+    "airflow_troubleshooting.md",
+    "spark_troubleshooting.md"
+  ]
+}

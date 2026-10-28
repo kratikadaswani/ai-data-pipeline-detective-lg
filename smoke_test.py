@@ -3,7 +3,14 @@ import os
 
 from dotenv import load_dotenv
 from langchain_openai import AzureChatOpenAI
+import os
+from dotenv import load_dotenv
 
+# load_dotenv()
+
+# print("DIAL endpoint:", os.getenv("DIAL_BASE_URL"))
+# print("DIAL model configured:", bool(os.getenv("DIAL_MODEL")))
+# print("DIAL key configured:", bool(os.getenv("DIAL_API_KEY")))
 load_dotenv()
 
 api_key = os.getenv("DIAL_API_KEY")

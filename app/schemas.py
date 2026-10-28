@@ -58,3 +58,11 @@ class IncidentReport(BaseModel):
     needs_more_information: bool = Field(
         description="Whether the available evidence is insufficient"
     )
+    
+    documentation_sources: list[str] = Field(
+    default_factory=list,
+    description=(
+        "Names of the knowledge-base documents used "
+        "as supporting context"
+    )
+    )
